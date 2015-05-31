@@ -1,21 +1,64 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Crisscross</title><description>Musings on what I do, what I make, and where I go.
 I take nothing for granted and try to give everything its due space for reflection. 
 
-</description><link>http://localhost:2368/</link><generator>Ghost 0.6</generator><lastBuildDate>Sat, 30 May 2015 14:54:29 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>If I have to say hello to strangers, this is what I'd say.</title><description>&lt;p&gt;"They" told me I should market myself with a brand, so I guess this blog is me attempting that. &lt;/p&gt;
+</description><link>http://localhost:2368/</link><generator>Ghost 0.6</generator><lastBuildDate>Sun, 31 May 2015 12:13:35 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Get a Ghost blog up and running with Github Pages</title><description>&lt;p&gt;After crafting a brand-new portfolio, I decided that I needed a dedicated space to write. I wanted to create posts with minimal effort and spend more time writing than formatting. Wordpress went way beyond my needs, and Medium seemed like a neat way to go, but I wanted the freedom&lt;/p&gt;</description><link>http://localhost:2368/get-a-ghost-blog-up-an-running-with-github-pages/</link><guid isPermaLink="false">cf899a78-9c55-4995-b92a-79532cc68659</guid><dc:creator>Vanessa Ogbuehi</dc:creator><pubDate>Sun, 31 May 2015 11:28:11 GMT</pubDate><content:encoded>&lt;p&gt;After crafting a brand-new portfolio, I decided that I needed a dedicated space to write. I wanted to create posts with minimal effort and spend more time writing than formatting. Wordpress went way beyond my needs, and Medium seemed like a neat way to go, but I wanted the freedom that comes with self-hosting. That led me to &lt;a href="https://ghost.org/"&gt;Ghost&lt;/a&gt;, a super simple blogging platform that lets me craft posts in Markdown. Couple Ghost with &lt;a href="https://github.com/axitkhurana/buster"&gt;Buster&lt;/a&gt;, a static site generator, and Github Pages, I had a free path towards my own self-hosted blog!&lt;/p&gt;
 
-&lt;p&gt;I don't think a lengthy introduction is necessary, but I feel like have to write something of the sort. You'll all get to know me pretty well as I write.&lt;/p&gt;
+&lt;p&gt;Buster is essentially a Python hack, but it works, and it gets the job done. Unfortunately, the documentation is sparse, and I ran into bugs and issues while trying to install. For my own future reference and to the benefit of anyone else interested in hosting their own Ghost blog on Github Pages, here are the steps I took:&lt;/p&gt;
 
-&lt;p&gt;To&lt;/p&gt;</description><link>http://localhost:2368/if-i-have-to-say-hello-to-strangers-this-is-what-id-say/</link><guid isPermaLink="false">4753a919-8359-47a8-b595-cea2bb69e700</guid><dc:creator>Vanessa Ogbuehi</dc:creator><pubDate>Sat, 30 May 2015 11:51:58 GMT</pubDate><content:encoded>&lt;p&gt;"They" told me I should market myself with a brand, so I guess this blog is me attempting that. &lt;/p&gt;
+&lt;p&gt;Note: I am working off a Mac and I will assume you have Node.js and wget installed (I used Homebrew to get everything I needed). &lt;/p&gt;
 
-&lt;p&gt;I don't think a lengthy introduction is necessary, but I feel like have to write something of the sort. You'll all get to know me pretty well as I write.&lt;/p&gt;
+&lt;h4 id="installghostlocally"&gt;Install Ghost locally&lt;/h4&gt;
 
-&lt;p&gt;To start, my name is Vanessa, but if you want to call me Nessa or something, I'd accept that too. I've never had a nickname.&lt;/p&gt;
+&lt;p&gt;Create a folder inside any directory you’d like. Download the &lt;a href="https://ghost.org/download/"&gt;latest version of Ghost&lt;/a&gt;, and unzip the contents into that folder. You could clone Ghost from Github into the folder, but I ended up facing access issues I could never resolve. This is faster and cleaner.&lt;/p&gt;
 
-&lt;p&gt;I like to call myself a "creative professional". I'm aware of how cheesy that sounds, and I know that title lacks some legitimacy, but as this point of my career, it's the most flexible and it's appropriately descriptive.&lt;/p&gt;
+&lt;p&gt;When that's done, open up your terminal and:&lt;/p&gt;
 
-&lt;p&gt;I make &lt;strong&gt;things&lt;/strong&gt;. I'm a professional costumer, theatre artist, and now web developer. Really, I'm kind of a junky when it comes to art. I'll pick up any medium as long as it serves my purposes. I still haven't found that &lt;em&gt;one thing&lt;/em&gt; that makes me go "yes, this is my life's purpose", but I'm still young, and perhaps one of the aforementioned crafts will stick longer than the others. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Run &lt;code&gt;npm install&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;npm start&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;Log into your Ghost account, set up your blog, and perhaps make a test post at &lt;a href="http://127.0.0.1:2368/ghost"&gt;http://127.0.0.1:2368/ghost&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;Regardless, I have a unique background, and that helps in everything I do.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;*You can shut down Ghost when you’re done with Ctrl+C, but you’ll need it running later. So either open a new terminal window/tab to continue running other commands, or just shut down Ghost for the moment.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id="setupgithubpages"&gt;Setup Github Pages&lt;/h4&gt;
+
+&lt;p&gt;Go to Github and create a new public repo. If you'd like to create a a "user page", go ahead and name the repo &lt;code&gt;USERNAME.github.io&lt;/code&gt;. If you are already using your user page to host something else, you have to create a “project page”. Go ahead and name the repo anything you want. I simply called mine &lt;a href="https://github.com/VanessaO/blog"&gt;"blog"&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Do NOT initiate the repo with a README file! Leave it as a blank repository. In the next steps, Buster will go through the trouble of creating a gh-pages branch so you can actually see your blog. No sweat.&lt;/p&gt;
+
+&lt;h4 id="generateanddeploythestaticpages"&gt;Generate and Deploy the Static Pages&lt;/h4&gt;
+
+&lt;p&gt;This is when you should double check that Ghost is running locally on another tab in the terminal. If not, you need to fire it up again with &lt;code&gt;npm start&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Run &lt;code&gt;pip install buster&lt;/code&gt; &lt;br&gt;
+Run &lt;code&gt;buster setup gh-repo=[repo url]&lt;/code&gt;. I suggest using the HTTPS clone url (e.g. &lt;code&gt;https://github.com/USERNAME/REPO.git&lt;/code&gt;) &lt;br&gt;
+Run &lt;code&gt;buster generate&lt;/code&gt; &lt;br&gt;
+Run &lt;code&gt;buster deploy&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After deploying, Buster should congratulate you with “Good Job! Deployed to Github Pages.” You can navigate to username.github.io or username.github.io/repo to see your brand new blog!&lt;/p&gt;
+
+&lt;p&gt;Easy as pie!&lt;/p&gt;
+
+&lt;p&gt;When making updates to your blog locally, make sure Ghost is running before you push all changes to Github using &lt;code&gt;buster generate&lt;/code&gt;, then &lt;code&gt;buster deploy&lt;/code&gt;. The simplest blogging solution ever!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Extra Notes:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;As mentioned in a development issue described &lt;a href="https://github.com/axitkhurana/buster/issues/38"&gt;here&lt;/a&gt;, &lt;code&gt;buster generate&lt;/code&gt; has issues when the local git repository is in a folder whose file path has spaces in it. For example I tried running Buster in a directory that looked like &lt;code&gt;/Documents/Code Projects/blog&lt;/code&gt;. The space in “Code Projects” was apparently an issue, so I started over in a new spaceless directory (&lt;code&gt;/Documents/SPACELESS/blog&lt;/code&gt;), and everything was fine!&lt;/p&gt;
+
+&lt;p&gt;Custom themes can be added to Ghost by adding the theme folder to the content/themes subfolder in the Ghost installation. Restart Ghost and make the changes under your blog settings.&lt;/p&gt;</content:encoded></item><item><title>If I have to say hello to strangers, this is what I'd say.</title><description>&lt;p&gt;"They" told me I should market myself with a brand, so I guess starting this blog is me attempting to do that. &lt;/p&gt;
+
+&lt;p&gt;A lengthy introduction is unnecessary, but I feel like I have to write something of the sort. You'll all get to know me pretty well as I write.&lt;/p&gt;</description><link>http://localhost:2368/if-i-have-to-say-hello-to-strangers-this-is-what-id-say/</link><guid isPermaLink="false">4753a919-8359-47a8-b595-cea2bb69e700</guid><dc:creator>Vanessa Ogbuehi</dc:creator><pubDate>Sat, 30 May 2015 11:51:58 GMT</pubDate><content:encoded>&lt;p&gt;"They" told me I should market myself with a brand, so I guess starting this blog is me attempting to do that. &lt;/p&gt;
+
+&lt;p&gt;A lengthy introduction is unnecessary, but I feel like I have to write something of the sort. You'll all get to know me pretty well as I write.&lt;/p&gt;
+
+&lt;p&gt;To start, my name is Vanessa, but if you want to call me Nessa or something, I'd happily accept that too. I've never had a nickname.&lt;/p&gt;
+
+&lt;p&gt;I like to call myself a "creative professional". I'm aware of how cheesy that sounds, and I know that title lacks legitimacy in certain circles, but at this point in my career, it's flexible and appropriately descriptive.&lt;/p&gt;
+
+&lt;p&gt;I make &lt;strong&gt;things&lt;/strong&gt;. I'm a professional costumer, theatre artist, and now web developer. Really, I'm just a junky when it comes to art. I'll pick up any medium as long as it serves my purposes. I still haven't found that &lt;em&gt;one thing&lt;/em&gt; that makes me go "yes, this is my life's purpose", but I'm young, and perhaps one of the aforementioned crafts will stick longer than the others. &lt;/p&gt;
+
+&lt;p&gt;Regardless, I have a unique background, and that helps with everything I do.&lt;/p&gt;
 
 &lt;p&gt;Hmm. What else about me is pertinent?&lt;/p&gt;
 

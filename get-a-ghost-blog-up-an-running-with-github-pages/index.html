@@ -1,0 +1,229 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Get a Ghost blog up and running with Github Pages</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=70d1ccf631">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="index.html">
+    
+    <meta property="og:site_name" content="Crisscross">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Get a Ghost blog up and running with Github Pages">
+    <meta property="og:description" content="After crafting a brand-new portfolio, I decided that I needed a dedicated space to write. I wanted to create posts with minimal effort and spend more time writing than formatting. Wordpress went way beyond my needs, and Medium seemed like...">
+    <meta property="og:url" content="http://localhost:2368/get-a-ghost-blog-up-an-running-with-github-pages/">
+    <meta property="article:published_time" content="2015-05-31T11:28:11.294Z">
+    <meta property="article:modified_time" content="2015-05-31T11:36:37.860Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Get a Ghost blog up and running with Github Pages">
+    <meta name="twitter:description" content="After crafting a brand-new portfolio, I decided that I needed a dedicated space to write. I wanted to create posts with minimal effort and spend more time writing than formatting. Wordpress went way beyond my needs, and Medium seemed like...">
+    <meta name="twitter:url" content="http://localhost:2368/get-a-ghost-blog-up-an-running-with-github-pages/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Crisscross",
+    "author": {
+        "@type": "Person",
+        "name": "Vanessa Ogbuehi",
+        "image": "http://localhost:2368/content/images/2015/05/userPic.jpg",
+        "url": "http://localhost:2368/author/vanessao",
+        "sameAs": "http://vanessao.me",
+        "description": "I'm a creative person working in theatre and web development.  Trying to satisfy my curiosity and insatiable desire to create new things "
+    },
+    "headline": "Get a Ghost blog up and running with Github Pages",
+    "url": "http://localhost:2368/get-a-ghost-blog-up-an-running-with-github-pages/",
+    "datePublished": "2015-05-31T11:28:11.294Z",
+    "dateModified": "2015-05-31T11:36:37.860Z",
+    "description": "After crafting a brand-new portfolio, I decided that I needed a dedicated space to write. I wanted to create posts with minimal effort and spend more time writing than formatting. Wordpress went way beyond my needs, and Medium seemed like..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.6">
+    <link rel="alternate" type="application/rss+xml" title="Crisscross" href="../rss/index.html">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home" role="presentation"><a href="../">Home</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="../rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="blog-logo" href="../"><img src="../content/images/2015/05/logo.png" alt="Blog Logo"></a>
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Get a Ghost blog up and running with Github Pages</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-05-31">31 May 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>After crafting a brand-new portfolio, I decided that I needed a dedicated space to write. I wanted to create posts with minimal effort and spend more time writing than formatting. Wordpress went way beyond my needs, and Medium seemed like a neat way to go, but I wanted the freedom that comes with self-hosting. That led me to <a href="https://ghost.org/">Ghost</a>, a super simple blogging platform that lets me craft posts in Markdown. Couple Ghost with <a href="https://github.com/axitkhurana/buster">Buster</a>, a static site generator, and Github Pages, I had a free path towards my own self-hosted blog!</p>
+
+<p>Buster is essentially a Python hack, but it works, and it gets the job done. Unfortunately, the documentation is sparse, and I ran into bugs and issues while trying to install. For my own future reference and to the benefit of anyone else interested in hosting their own Ghost blog on Github Pages, here are the steps I took:</p>
+
+<p>Note: I am working off a Mac and I will assume you have Node.js and wget installed (I used Homebrew to get everything I needed). </p>
+
+<h4 id="installghostlocally">Install Ghost locally</h4>
+
+<p>Create a folder inside any directory you’d like. Download the <a href="https://ghost.org/download/">latest version of Ghost</a>, and unzip the contents into that folder. You could clone Ghost from Github into the folder, but I ended up facing access issues I could never resolve. This is faster and cleaner.</p>
+
+<p>When that's done, open up your terminal and:</p>
+
+<ol>
+<li>Run <code>npm install</code>  </li>
+<li>Run <code>npm start</code>  </li>
+<li>Log into your Ghost account, set up your blog, and perhaps make a test post at <a href="http://127.0.0.1:2368/ghost">http://127.0.0.1:2368/ghost</a></li>
+</ol>
+
+<p><em>*You can shut down Ghost when you’re done with Ctrl+C, but you’ll need it running later. So either open a new terminal window/tab to continue running other commands, or just shut down Ghost for the moment.</em></p>
+
+<h4 id="setupgithubpages">Setup Github Pages</h4>
+
+<p>Go to Github and create a new public repo. If you'd like to create a a "user page", go ahead and name the repo <code>USERNAME.github.io</code>. If you are already using your user page to host something else, you have to create a “project page”. Go ahead and name the repo anything you want. I simply called mine <a href="https://github.com/VanessaO/blog">"blog"</a>.</p>
+
+<p>Do NOT initiate the repo with a README file! Leave it as a blank repository. In the next steps, Buster will go through the trouble of creating a gh-pages branch so you can actually see your blog. No sweat.</p>
+
+<h4 id="generateanddeploythestaticpages">Generate and Deploy the Static Pages</h4>
+
+<p>This is when you should double check that Ghost is running locally on another tab in the terminal. If not, you need to fire it up again with <code>npm start</code>.</p>
+
+<p>Run <code>pip install buster</code> <br>
+Run <code>buster setup gh-repo=[repo url]</code>. I suggest using the HTTPS clone url (e.g. <code>https://github.com/USERNAME/REPO.git</code>) <br>
+Run <code>buster generate</code> <br>
+Run <code>buster deploy</code></p>
+
+<p>After deploying, Buster should congratulate you with “Good Job! Deployed to Github Pages.” You can navigate to username.github.io or username.github.io/repo to see your brand new blog!</p>
+
+<p>Easy as pie!</p>
+
+<p>When making updates to your blog locally, make sure Ghost is running before you push all changes to Github using <code>buster generate</code>, then <code>buster deploy</code>. The simplest blogging solution ever!</p>
+
+<p><strong>Extra Notes:</strong></p>
+
+<p>As mentioned in a development issue described <a href="https://github.com/axitkhurana/buster/issues/38">here</a>, <code>buster generate</code> has issues when the local git repository is in a folder whose file path has spaces in it. For example I tried running Buster in a directory that looked like <code>/Documents/Code Projects/blog</code>. The space in “Code Projects” was apparently an issue, so I started over in a new spaceless directory (<code>/Documents/SPACELESS/blog</code>), and everything was fine!</p>
+
+<p>Custom themes can be added to Ghost by adding the theme folder to the content/themes subfolder in the Ghost installation. Restart Ghost and make the changes under your blog settings.</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../author/vanessao/" style="background-image: url(../content/images/2015/05/userPic.jpg)"><span class="hidden">Vanessa Ogbuehi's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../author/vanessao/">Vanessa Ogbuehi</a></h4>
+
+                    <p>I'm a creative person working in theatre and web development.  Trying to satisfy my curiosity and insatiable desire to create new things </p>
+                <div class="author-meta">
+                    
+                    <span class="author-link icon-link"><a href="http://vanessao.me">http://vanessao.me</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Get%20a%20Ghost%20blog%20up%20and%20running%20with%20Github%20Pages&amp;url=http://localhost:2368/get-a-ghost-blog-up-an-running-with-github-pages/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/get-a-ghost-blog-up-an-running-with-github-pages/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/get-a-ghost-blog-up-an-running-with-github-pages/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'vanessao'; // required: replace example with your forum shortname
+                var disqus_identifier = 'ghost-3';
+             
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story prev no-cover" href="../if-i-have-to-say-hello-to-strangers-this-is-what-id-say/">
+        <section class="post">
+            <h2>If I have to say hello to strangers, this is what I'd say.</h2>
+            <p>"They" told me I should market myself with a brand, so I guess starting this blog is me attempting…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="../">Crisscross</a> © 2015</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script src="../public/jquery.js?v=70d1ccf631"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=70d1ccf631"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=70d1ccf631"></script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'vanessao'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+</body>
